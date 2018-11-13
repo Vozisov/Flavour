@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:pv="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".MainActivity">
+
+    <com.github.ybq.parallaxviewpager.ParallaxViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/view_pager_indicator"
+        pv:interpolator="@anim/decelerate_interpolator"
+        pv:mode="right_overlay"
+        pv:outset="62%"
+        pv:shadow_width="30dp" />
+
+    <com.itsronald.widget.ViewPagerIndicator
+        android:id="@+id/view_pager_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:background="@android:color/white"
+        app:dotRadius="8dp"
+        app:selectedDotColor="@color/colorPrimaryDark"
+        app:unselectedDotColor="@color/colorAccent"
+        app:viewPagerId="@id/viewpager" />
+
+</RelativeLayout>
